@@ -1,0 +1,22 @@
+<ng-container *ngIf="!isLogin; else elseTemplate">
+
+    <ion-list>
+        <button ion-item (click)="openLoginPage()">
+            <i class="fa fa-unlock-alt fa-flip-horizontal" aria-hidden="true"></i>&nbsp;
+            Autenticarse</button>
+        <button ion-item (click)="openSignUpPage()">
+          <i class="fa fa-list-alt" aria-hidden="true"></i>
+          &nbsp; Registrarse
+        </button>
+    </ion-list>
+
+</ng-container>
+<ng-template #elseTemplate>
+    <ion-list>
+        <button ion-item (click)="close()"><ion-icon name="star"></ion-icon >Mis favoritos</button>
+        <button ion-item (click)="close()"><ion-icon name="star"></ion-icon >Crear anuncio</button>
+        <button ion-item (click)="close()"><ion-icon name="star"></ion-icon >Mis anuncios</button>
+        <button ion-item (click)="close()"><ion-icon name="star"></ion-icon >Mis búsquedas</button>
+        <button ion-item (click)="close()"><ion-icon name="star"></ion-icon >Cerrar sesión</button>
+    </ion-list>
+</ng-template>

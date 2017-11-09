@@ -1,0 +1,23 @@
+page-services {
+    .item-block .item-inner {
+        border-bottom: none !important;
+    }
+    .serv-title {
+        color: #0092b6;
+        border-bottom: 1px solid #dedede
+    }
+    .item {
+        border-bottom: 1px solid #dedede;
+        padding-left: 10px;
+    }
+    ion-avatar {
+        margin: 8px 16px 8px -10px;
+        & img {
+            width: 80px !important;
+            height: 80px !important;
+        }
+    }
+    ion-select {
+        max-width: 100%;
+    }
+}

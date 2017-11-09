@@ -1,0 +1,30 @@
+<ion-header>
+    <app-header> </app-header>
+</ion-header>
+
+<ion-content padding>
+    <ng-container *ngIf="!connetionDown; else elseTemplate">
+        <ion-searchbar placeholder="         ¿Que buscas?" #search></ion-searchbar>
+        <ion-label text-center color="azul-claro">Principales tendencias</ion-label>
+
+        <ion-list>
+            <button *ngFor="let sub of subCategories" class="btn-text-left" text-left color="azul-claro" ion-button block margin-bottom="1" (click)='openServicesPage(sub.id)'>
+              <ion-icon name="star"></ion-icon >
+               &nbsp;{{sub.title}}
+            </button>
+        </ion-list>
+
+        <button color="azul-claro" class="btn-text-left" ion-button block margin-bottom="2" (click)="openCategoriesPage()">
+          <ion-icon name="search"></ion-icon>
+          &nbsp;Buscar por categoria
+        </button>
+
+    </ng-container>
+    <ng-template #elseTemplate>
+        <ion-label text-center color="danger">NO HAY CONEXION CON EL SERVIDOR</ion-label>
+
+        <button color="azul-claro" ion-button block margin-bottom="2" (click)="reConnect()">
+           Reintentar
+          </button>
+    </ng-template>
+</ion-content>
